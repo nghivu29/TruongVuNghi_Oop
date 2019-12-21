@@ -1,9 +1,6 @@
 package bai8;
 import myexceptions.*;
 
-import java.sql.Array;
-import java.util.Arrays;
-
 public class CDList {
     private CD[] list;
 
@@ -32,12 +29,13 @@ public class CDList {
 
     //dem so CD trong mang
     public int countCD(){
-        int i = 0;
+        int count = 0;
 
-        while (list[i] != null && i < list.length)
-            i++;
-
-        return i + 1;
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] != null)
+                count++;
+        }
+        return count;
     }
 
     //tinh tong gia
