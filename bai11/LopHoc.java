@@ -47,11 +47,26 @@ public class LopHoc {
                 System.out.print("Nhung mon thi lai: ");
 
                 for (String mon: i.nhungMonThiLai()){
-                    System.out.println(" "+ mon);
+                    System.out.print(" "+ mon);
                 }
+
+                System.out.println();
             }
         }
     }
 
+    public void themHocVien(HocVien hocVienMoi){
+        list.add(hocVienMoi);
+    }
 
+    @Override
+    public String toString() {
+        String toReturn = "";
+
+        for (HocVien i : list) {
+            toReturn += '\n' + i.toString();
+        }
+
+        return toReturn;
+    }
 }

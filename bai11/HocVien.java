@@ -13,7 +13,7 @@ class Diem{
             setLy(ly);
             setHoa(hoa);
             setVan(van);
-            setVan(anh);
+            setAnh(anh);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -91,7 +91,7 @@ public class HocVien {
     }
 
     public void setHoTen(String hoTen) throws Exception {
-        if (!hoTen.trim().equals(""))
+        if (hoTen.trim().equals(""))
             throw new Exception("Loi: ho ten khong rong");
         this.hoTen = hoTen;
     }
@@ -109,7 +109,7 @@ public class HocVien {
     }
 
     public void setAllDiem(int toan, int ly, int hoa, int van, int anh) {
-        diem = new Diem(toan, ly, hoa, anh, van);
+        diem = new Diem(toan, ly, hoa, van, anh);
     }
 
     public void setDiem(Diem diem) {
@@ -193,6 +193,14 @@ public class HocVien {
         }
         return list;
     }
+
+    @Override
+    public String toString() {
+        return "HocVien{" +
+                "hoTen='" + hoTen + '\'' +
+                ", namSinh=" + namSinh +
+                ", diemTB=" + diem.diemTB() +
+                '}';
+    }
 }
 
-//head first desig pating
