@@ -1,5 +1,8 @@
 package bai12;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
     private String name;
     private String address;
@@ -31,7 +34,39 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public void aboutCourse(){
+    public List<Course> coursesLearned(Courses coursesAvailable){
+        List<Course> toReturn = new ArrayList();
 
+        for (Course course: coursesAvailable.courseList){
+            for (Student student: course.getStudentList()){
+                if (student == null)
+                    break;
+
+                if (student.getName().equals(this.name) ){
+                    toReturn.add(course);
+                }
+            }
+
+        }
+
+        return toReturn;
     }
+
+
+    public Student(){};
+
+    public Student(String name, String address, String phoneNumber){
+        try {
+            setName(name);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        setAddress(address);
+        setPhoneNumber(phoneNumber);
+    }
+
+    public Student(String name){
+        this(name, null, null);
+    }
+
 }
