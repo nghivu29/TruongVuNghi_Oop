@@ -3,47 +3,47 @@ package bai_2;
 import bai_1.Diem;
 
 public class DoanThang {
-    private Diem A, B;
+    private Diem diemDau, diemCuoi;
 
-    public Diem getA() {
-        return A;
+    public Diem getDiemDau() {
+        return diemDau;
     }
 
-    public void setA(Diem a) {
-        A = a;
+    public void setDiemDau(Diem diemDau) {
+        this.diemDau = diemDau;
     }
 
-    public Diem getB() {
-        return B;
+    public Diem getDiemCuoi() {
+        return diemCuoi;
     }
 
-    public void setB(Diem b) {
-        B = b;
+    public void setDiemCuoi(Diem diemCuoi) {
+        this.diemCuoi = diemCuoi;
     }
 
-    DoanThang(Diem A, Diem B){
-        this.A = A;
-        this.B = B;
+    DoanThang(Diem diemDau, Diem diemCuoi){
+        this.diemDau = diemDau;
+        this.diemCuoi = diemCuoi;
     }
 
     @Override
     public String toString() {
-        return "[(" + A.getX() + ',' + A.getY() + "),(" + B.getX() + ',' + B.getY() + ")]";
+        return "[(" + diemDau.getX() + ',' + diemDau.getY() + "),(" + diemCuoi.getX() + ',' + diemCuoi.getY() + ")]";
     }
 
 
     public double lenght(){
-        return Math.sqrt((A.getX() - B.getX())*(A.getX() - B.getX()) + (A.getY() - B.getY())*(A.getY() - B.getY()));
+        return Math.sqrt((diemDau.getX() - diemCuoi.getX())*(diemDau.getX() - diemCuoi.getX()) + (diemDau.getY() - diemCuoi.getY())*(diemDau.getY() - diemCuoi.getY()));
     }
 
     public boolean parallel(DoanThang doanThangKhac){
-        if ( (A.getX() - B.getX()) / (A.getY() - B.getY()) == (doanThangKhac.A.getX() - doanThangKhac.B.getX()) / (doanThangKhac.A.getY() - doanThangKhac.B.getY()) )
+        if ( (diemDau.getX() - diemCuoi.getX()) / (diemDau.getY() - diemCuoi.getY()) == (doanThangKhac.diemDau.getX() - doanThangKhac.diemCuoi.getX()) / (doanThangKhac.diemDau.getY() - doanThangKhac.diemCuoi.getY()) )
             return true;
         return false;
     }
 
     public Diem midpoint(){
-        Diem mid = new Diem((A.getX() + B.getX()) / 2, (A.getY() - B.getY()) / 2);
+        Diem mid = new Diem((diemDau.getX() + diemCuoi.getX()) / 2, (diemDau.getY() - diemCuoi.getY()) / 2);
         return mid;
     }
 }
