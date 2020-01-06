@@ -13,13 +13,11 @@ public class GVThinhGiang extends GiangVien {
 
     @Override
     public double tinhTienLuong(double soGio) {
-        return 0;
+        return soGio*90000;
     }
 
     @Override
     public String toString() {
-        return "GVThinhGiang{" +
-                "noiCongTac='" + noiCongTac + '\'' +
-                '}';
+        return super.toString() +"\nNoi cong tac: "+ noiCongTac;
     }
 }

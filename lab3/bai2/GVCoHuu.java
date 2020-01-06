@@ -14,14 +14,11 @@ public class GVCoHuu extends GiangVien {
 
     @Override
     public double tinhTienLuong(double soGio) {
-        return 0;
+        return soGio*90000 + luongCb*heSo;
     }
 
     @Override
     public String toString() {
-        return "GVCoHuu{" +
-                "luongCb=" + luongCb +
-                ", heSo=" + heSo +
-                '}';
+        return super.toString() + "\nLuong co ban: "+ luongCb +"\nHe so: "+ heSo;
     }
 }
