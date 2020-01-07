@@ -38,6 +38,7 @@ public class QLGiangVien {
         System.out.println("\n###Nhap so gio lam viec cho tung giang vien");
         double soGio;
 
+        //nhap
         for (GiangVien gv: gvs){
             System.out.print("Giang vien: "+ gv.getHoTen() +"\n\tSo gio lam viec: ");
             soGio = new Scanner(System.in).nextDouble();
