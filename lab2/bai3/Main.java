@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        SanPham a = new SanPham();
-//        a.nhapSanPham(new Scanner(System.in));
-//        System.out.println(a.toString());
+//        SanPham ChuyenNgoaiThanh = new SanPham();
+//        ChuyenNgoaiThanh.nhapSanPham(new Scanner(System.in));
+//        System.out.println(ChuyenNgoaiThanh.toString());
 
         Scanner sc = new Scanner(System.in);
 

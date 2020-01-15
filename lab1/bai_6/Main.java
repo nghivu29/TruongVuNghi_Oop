@@ -5,12 +5,12 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) throws ParseException, NgoaiLeDiem {
-//        HocVien a = new HocVien();
+//        HocVien ChuyenNgoaiThanh = new HocVien();
 //
 //        Scanner sc = new Scanner(System.in);
-//        a.nhapThongTin(sc);
-//        a.nhapDiem(sc);
-//        a.hienThi();
+//        ChuyenNgoaiThanh.nhapThongTin(sc);
+//        ChuyenNgoaiThanh.nhapDiem(sc);
+//        ChuyenNgoaiThanh.hienThi();
 
         QLHocVien quanLy = new QLHocVien();
         quanLy.themHocVien(new HocVien("Aaa", new Date(), GioiTinh.NAM));

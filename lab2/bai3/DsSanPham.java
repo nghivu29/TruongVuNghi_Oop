@@ -13,15 +13,16 @@ public class DsSanPham {
     }
 
     public boolean themSanPham(SanPham sp){
-        dsSanPham.add(sp);
-        return false;
-    }
-
-    public boolean xoaSanPham(SanPham sp){
         return dsSanPham.add(sp);
     }
 
+    public boolean xoaSanPham(SanPham sp){
+        return dsSanPham.remove(sp);
+    }
+
+    //sai
     public boolean xoaSanPham(String maSP){
+        //sai
         return dsSanPham.remove(maSP);
     }
 
