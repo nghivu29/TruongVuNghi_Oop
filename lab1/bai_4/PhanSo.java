@@ -12,20 +12,17 @@ public class PhanSo {
         return a;
     }
 
-    public PhanSo(int tu, int mau) {
-
+    //phương thức khởi tạo với ngoại lệ mẫu khác không
+    public PhanSo(int tu, int mau)  {
+        setTu(tu);
         try {
             setMau(mau);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
-
-        if (tu == 0){
-            this.tu = 0;
-            this.mau = 1;
-        }else this.tu = tu;
     }
 
+    //phương thức khởi tạo không tham số
     public PhanSo(){
         tu = 0;
         mau = 1;
@@ -54,11 +51,11 @@ public class PhanSo {
         System.out.println(tu +"/"+ mau);
     }
 
-    public PhanSo nhan(PhanSo phanSoKhac){
+    public PhanSo nhan(PhanSo phanSoKhac)  {
         return new PhanSo(tu * phanSoKhac.tu, mau * phanSoKhac.mau).rutGon();
     }
 
-    public PhanSo cong(PhanSo phanSoKhac){
+    public PhanSo cong(PhanSo phanSoKhac)  {
         return new PhanSo(tu*phanSoKhac.mau + phanSoKhac.tu*mau, mau * phanSoKhac.mau).rutGon();
     }
 
@@ -68,7 +65,7 @@ public class PhanSo {
         return new PhanSo(tu * phanSoKhac.mau, mau * phanSoKhac.tu).rutGon();
     }
 
-    public PhanSo tru(PhanSo phanSoKhac){
+    public PhanSo tru(PhanSo phanSoKhac) {
         return new PhanSo(tu*phanSoKhac.mau - phanSoKhac.tu*mau, mau * phanSoKhac.mau).rutGon();
     }
 
@@ -77,7 +74,10 @@ public class PhanSo {
     }
 
     public void setTu(int tu) {
-        this.tu = tu;
+        if (tu == 0){
+            this.tu = 0;
+            this.mau = 1;
+        }else this.tu = tu;
     }
 
     public int getMau() {

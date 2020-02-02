@@ -29,11 +29,6 @@ public class Diem {
         return "("+ x +", "+ y + ")" ;
     }
 
-    //sai ve tu duy, cai duoi tot hon
-    static public double khoangCach(Diem A, Diem B){
-        return Math.sqrt((A.x - B.x)*(A.x - B.x) + (A.y - B.y)*(A.y - B.y));
-    }
-
     //nen lam truong hop nay
     public double khoangCach(Diem another){
         return Math.sqrt(Math.pow(another.x - x, 2) + Math.pow(another.y - y, 2));

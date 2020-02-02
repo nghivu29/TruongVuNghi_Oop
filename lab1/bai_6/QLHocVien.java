@@ -72,6 +72,7 @@ public class QLHocVien {
     public void hienThi(){
         for (HocVien hv: list){
             hv.hienThi();
+            System.out.println();
         }
     }
 

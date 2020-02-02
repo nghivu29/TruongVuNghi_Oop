@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DsSanPham {
     private List<SanPham> dsSanPham;
-
     {
         dsSanPham = new ArrayList<>();
     }
@@ -16,16 +16,17 @@ public class DsSanPham {
         return dsSanPham.add(sp);
     }
 
+    //xóa sp theo đối tượng
     public boolean xoaSanPham(SanPham sp){
         return dsSanPham.remove(sp);
     }
 
-    //sai
+    //xóa sp theo mã
     public boolean xoaSanPham(String maSP){
-        //sai
-        return dsSanPham.remove(maSP);
+        return dsSanPham.removeIf(sanPham -> sanPham.getMaSP().equals(maSP));
     }
 
+    //cập nhật thêm thông tin cho sản phẩm
     public boolean capNhapSanPham(String maSp, String ten, String moTa, double gia){
         for (SanPham sp: dsSanPham){
             if (sp.getMaSP().equals(maSp)){
@@ -35,19 +36,28 @@ public class DsSanPham {
                 return true;
             }
         }
-
         return false;
     }
 
-    public List<SanPham> timKiem(String tuKhoa){
-
-
-        return new ArrayList<>();
+    //tìm kiếm theo mã
+    public SanPham timKiem(String maSp){
+        return dsSanPham.stream().findFirst()
+                .filter(sanPham -> sanPham.getMaSP().equals(maSp))
+                .get();
     }
 
-    public List<SanPham> timKiem(double tuGia, double denGia){
+    //tìm kiếm theo tên
+    public List<SanPham> timKiemTen(String tuKhoa){
+        return dsSanPham.stream()
+                .filter(sanPham -> sanPham.getTen().contains(tuKhoa))
+                .collect(Collectors.toList());
+    }
 
-        return new ArrayList<>();
+    //tìm kiếm theo giá bán
+    public List<SanPham> timKiem(double tuGia, double denGia){
+        return dsSanPham.stream()
+                .filter(sanPham -> sanPham.getGiaBan() >= tuGia && sanPham.getGiaBan() <= denGia)
+                .collect(Collectors.toList());
     }
 
     //sắp xếp theo giá giảm dần
@@ -69,4 +79,6 @@ public class DsSanPham {
             System.out.println(sp.toString());
         }
     }
+
+
 }

@@ -62,6 +62,7 @@ public class QLGiangVien {
 
 
     public void hienThi(){
-
+        System.out.println("\n\n...Bắt đầu hiển thị...");
+        gvs.forEach(System.out::println);
     }
 }

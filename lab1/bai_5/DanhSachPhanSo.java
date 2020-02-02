@@ -15,6 +15,7 @@ public class DanhSachPhanSo {
 //        this.list = list;
 //    }
 
+    //thêm phân số vào danh sách
     public void add(PhanSo phanSoMoi){
         list.add(phanSoMoi);
     }
@@ -26,13 +27,12 @@ public class DanhSachPhanSo {
                 break;
             }
         }
-
         return phanSoMoi;
     }
 
+    //tổng tất cả cac phân số trong danh sách
     public PhanSo sumAll(){
         PhanSo sum = new PhanSo(0, 1);
-
         for (PhanSo i: list){
             sum = sum.cong(i);
         }
@@ -40,6 +40,7 @@ public class DanhSachPhanSo {
         return sum;
     }
 
+    //hiển thị danh sách
     public void display(){
         int dem = 0;
         for (PhanSo i: list){
@@ -55,7 +56,6 @@ public class DanhSachPhanSo {
     }
 
     public void sort(){
-        PhanSo  temp ;
         for  ( int  i =  0 ; i < list.size() -  1 ; i ++) {
             for  ( int  j =  0 ; j < list.size() -  1  - i; j ++) {
                 if  (list.get(j).soSanhVoi(list.get(j+1)) == 1) {

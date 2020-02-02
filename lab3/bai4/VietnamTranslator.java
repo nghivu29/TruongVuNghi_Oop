@@ -152,7 +152,6 @@ public class VietnamTranslator implements NumberTranslator {
         for (Integer i : cacHang) {
             result += i;
         }
-        System.out.println(Integer.MAX_VALUE);
         return result;
     }
 
