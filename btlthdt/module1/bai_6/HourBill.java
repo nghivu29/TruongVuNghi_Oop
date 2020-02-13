@@ -19,4 +19,8 @@ public class HourBill extends RoomBill {
         return super.calculate() * hour;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + String.format("%-15.2f giờ", hour);
+    }
 }

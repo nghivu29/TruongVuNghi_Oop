@@ -18,18 +18,6 @@ public class Course {
         this.name = name;
     }
 
-    public LocalDate getOpenDay() {
-        return openDay;
-    }
-
-    public void setOpenDay(LocalDate openDay) {
-        this.openDay = openDay;
-    }
-
-    public int getTrainingDay() {
-        return trainingDay;
-    }
-
     public void setTrainingDay(int trainingDay) throws Exception {
         if (trainingDay < 0)
             throw new Exception("Loi: ngay la so duong");

@@ -6,14 +6,23 @@ public abstract class HangHoa implements VAT{
     private double donGia;
     private int soLuongTon;
 
-    public HangHoa(long maHang, String tenHang, double donGia) throws NgoaiLeSoAm {
+    abstract protected boolean vanDe();
+
+    public HangHoa(long maHang, String tenHang, double donGia, int soLuongTon) throws NgoaiLeSoAm {
         this.maHang = maHang;
         setDonGia(donGia);
-        this.donGia = donGia;
+        setTenHang(tenHang);
     }
 
     public HangHoa(long maHang) throws NgoaiLeSoAm {
         this(maHang, "xxx", 0);
+    }
+
+    //constructor sử dụng để test cho nhanh
+    public HangHoa(long maHang, String tenHang, int soLuongTon) throws NgoaiLeSoAm {
+        this.maHang = maHang;
+        setTenHang(tenHang);
+        setSoLuongTon(soLuongTon);
     }
 
     public long getMaHang() {
@@ -48,5 +57,10 @@ public abstract class HangHoa implements VAT{
         if (soLuongTon < 0)
             throw new NgoaiLeSoAm();
         this.soLuongTon = soLuongTon;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-15d%-15s%-15.2f%-15d", maHang, tenHang, donGia, soLuongTon);
     }
 }

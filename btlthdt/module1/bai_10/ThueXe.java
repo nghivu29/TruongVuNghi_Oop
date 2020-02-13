@@ -1,9 +1,8 @@
 package btlthdt.module1.bai_10;
 
 public class ThueXe {
-    private Xe xe;
 
-    public double tinhThue(){
+    public static double tinhThue(Xe xe){
         Class loaiXe = xe.getClass();
 
         if (XeDap.class.equals(loaiXe))

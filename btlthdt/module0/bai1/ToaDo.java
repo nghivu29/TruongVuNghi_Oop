@@ -28,8 +28,6 @@ public class ToaDo {
         this.y = y;
     }
 
-    ToaDo(){}
-
     public ToaDo(String name, double x, double y) {
         this.name = name;
         this.x = x;

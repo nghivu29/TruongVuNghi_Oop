@@ -34,10 +34,10 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<Course> coursesLearned(Courses coursesAvailable){
+    public List<Course> coursesLearned(CourseList courseListAvailable){
         List<Course> toReturn = new ArrayList();
 
-        for (Course course: coursesAvailable.courseList){
+        for (Course course: courseListAvailable.getCourseList()){
             for (Student student: course.getStudentList()){
                 if (student == null)
                     break;
@@ -52,8 +52,6 @@ public class Student {
         return toReturn;
     }
 
-
-    public Student(){};
 
     public Student(String name, String address, String phoneNumber){
         try {

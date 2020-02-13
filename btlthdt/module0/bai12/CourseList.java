@@ -3,8 +3,8 @@ package btlthdt.module0.bai12;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Courses {
-    List<Course> courseList = new ArrayList<>();
+public class CourseList {
+    private List<Course> courseList = new ArrayList<>();
 
     public Course search(String courseName){
 
@@ -39,5 +39,9 @@ public class Courses {
         }
 
         return toReturn;
+    }
+
+    public List<Course> getCourseList() {
+        return courseList;
     }
 }

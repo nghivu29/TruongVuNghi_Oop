@@ -8,6 +8,10 @@ public class Customer {
     private String name;
     private List<Bill> listBill = new ArrayList<>();
 
+    public Customer (String name){
+        this.name = name;
+    }
+
     public boolean addBill(Bill bill){
         return listBill.add(bill);
     }

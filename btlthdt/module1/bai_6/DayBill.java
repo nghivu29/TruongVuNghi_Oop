@@ -16,4 +16,9 @@ public class DayBill extends RoomBill {
             return super.calculate() * ( 7 + (day - 7)*0.8);
         return super.calculate() * day;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + String.format("%-15d ngày", day);
+    }
 }

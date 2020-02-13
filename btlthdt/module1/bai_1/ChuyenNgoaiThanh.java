@@ -16,6 +16,25 @@ public class ChuyenNgoaiThanh extends ChuyenXe {
         this.soNgayDi = soNgayDi;
     }
 
-    public ChuyenNgoaiThanh() {
+    public ChuyenNgoaiThanh(String maSo){
+        super(maSo);
+    }
+
+
+
+    public String getNoiDen() {
+        return noiDen;
+    }
+
+    public void setNoiDen(String noiDen) {
+        this.noiDen = noiDen;
+    }
+
+    public int getSoNgayDi() {
+        return soNgayDi;
+    }
+
+    public void setSoNgayDi(int soNgayDi) {
+        this.soNgayDi = soNgayDi;
     }
 }

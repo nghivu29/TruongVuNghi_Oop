@@ -16,6 +16,23 @@ public class ChuyenNoiThanh extends ChuyenXe {
         this.soKmDi = soKmDi;
     }
 
-    public ChuyenNoiThanh() {
+    public ChuyenNoiThanh(String maSo){
+        super(maSo);
+    }
+
+    public void setSoTuyen(int soTuyen) {
+        this.soTuyen = soTuyen;
+    }
+
+    public void setSoKmDi(double soKmDi) {
+        this.soKmDi = soKmDi;
+    }
+
+    public double getSoKmDi() {
+        return soKmDi;
+    }
+
+    public int getSoTuyen() {
+        return soTuyen;
     }
 }

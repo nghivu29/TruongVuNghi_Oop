@@ -46,23 +46,23 @@ public class Test {
         course6.addStudent(student7);
 
 
-        Courses courses = new Courses();
-        courses.addCourse(course1);
-        courses.addCourse(course2);
-        courses.addCourse(course3);
-        courses.addCourse(course4);
-        courses.addCourse(course5);
-        courses.addCourse(course6);
+        CourseList courseList = new CourseList();
+        courseList.addCourse(course1);
+        courseList.addCourse(course2);
+        courseList.addCourse(course3);
+        courseList.addCourse(course4);
+        courseList.addCourse(course5);
+        courseList.addCourse(course6);
 
 
         System.out.print("#Tim kiem khoa hoc\nNhap ten mon hoc: (vd: \"Tieng anh\") ");
-        System.out.println("Ket qua tim: "+ courses.search(sc.nextLine()));
+        System.out.println("Ket qua tim: "+ courseList.search(sc.nextLine()));
 
         System.out.println("\n#Biet mot hoc vien da tung hoc nhung khoa nao:");
-        System.out.println("vd: stundent5 {name=E}\nHoc vien \"E\" da tung hoc cac khoa: "+ student5.coursesLearned(courses));
+        System.out.println("vd: stundent5 {name=E}\nHoc vien \"E\" da tung hoc cac khoa: "+ student5.coursesLearned(courseList));
 
-        System.out.println("\n#Cac khoa chua ket thuc:\n"+ courses.coursesNotFinished());
-        System.out.println("\n#Cac khoa chua bat dau:\n"+ courses.coursesNotBegin());
+        System.out.println("\n#Cac khoa chua ket thuc:\n"+ courseList.coursesNotFinished());
+        System.out.println("\n#Cac khoa chua bat dau:\n"+ courseList.coursesNotBegin());
 
         System.out.println("\n###Tinh tu hom nay: "+ LocalDate.now());
 

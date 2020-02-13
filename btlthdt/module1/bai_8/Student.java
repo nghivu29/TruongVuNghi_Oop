@@ -1,7 +1,7 @@
 package btlthdt.module1.bai_8;
 
 public class Student extends Person implements Comment{
-    private Score score;
+    private Score score = new Score();
 
     public Student(String fulName, float mathScore, float englishScore) throws ScoreException {
         super(fulName);
@@ -24,7 +24,7 @@ public class Student extends Person implements Comment{
 
     @Override
     public String toString() {
-        return "Hoc sinh:\n" +
+        return "#Hoc sinh:\n" +
                 super.toString()+ '\n' + score.toString();
     }
 }
@@ -37,7 +37,7 @@ class Score {
     }
 
     public void setMath(float math) throws ScoreException {
-        if (ScoreException.test(math))
+        if (!ScoreException.test(math))
             throw new ScoreException();
         this.math = math;
     }
@@ -47,7 +47,7 @@ class Score {
     }
 
     public void setEnglish(float english) throws ScoreException {
-        if (ScoreException.test(english))
+        if (!ScoreException.test(english))
             throw new ScoreException();
         this.english = english;
     }

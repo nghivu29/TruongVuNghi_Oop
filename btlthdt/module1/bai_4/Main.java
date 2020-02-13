@@ -22,6 +22,7 @@ public class Main {
         System.out.println("\nTrung bình thành tiền của giao dịch đất là: "+ management.averageIntoMoneyOfTrading(LandTrading.class));
 
         //xuất ra các giao dịch của tháng 9 năm 2013
+        System.out.println("\nCác giao dịch của tháng 9 năm 2013 có mã code là:");
         management.tradingInMonthYear(Month.SEPTEMBER, 2013).getList().forEach(System.out::println);
 
 

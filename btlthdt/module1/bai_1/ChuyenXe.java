@@ -11,6 +11,29 @@ public abstract class ChuyenXe {
         this.soXe = soXe;
     }
 
-    public ChuyenXe() {
+    public ChuyenXe(String maSo) {
+        this.maSo = maSo;
+    }
+
+
+
+    public void setHoTenTaiXe(String hoTenTaiXe) {
+        this.hoTenTaiXe = hoTenTaiXe;
+    }
+
+    public void setSoXe(String soXe) {
+        this.soXe = soXe;
+    }
+
+    public String getMaSo() {
+        return maSo;
+    }
+
+    public String getHoTenTaiXe() {
+        return hoTenTaiXe;
+    }
+
+    public String getSoXe() {
+        return soXe;
     }
 }

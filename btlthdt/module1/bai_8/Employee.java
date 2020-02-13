@@ -27,7 +27,7 @@ public class Employee extends Person implements Comment {
 
     @Override
     public String toString() {
-        return "Nhan vien:\n" +
+        return "#Nhan vien:\n" +
                 super.toString() + '\n' +
                 "He so luong: " + heSoLuong + '\n' +
                 "Tien luong: " + tinhLuong();

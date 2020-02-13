@@ -7,13 +7,17 @@ public class HangSanhSu extends HangHoa {
     private LocalDate ngayNhapKho;
 
 
+    @Override
+    protected boolean vanDe() {
+        return getSoLuongTon() > 50 && ngayNhapKho.plusDays(10).isAfter(LocalDate.now());
+    }
+
     public HangSanhSu(long maHang) throws NgoaiLeSoAm {
         super(maHang);
     }
 
-    public HangSanhSu(long maHang, String nhaSanXuat) throws NgoaiLeSoAm {
-        super(maHang);
-        this.nhaSanXuat = nhaSanXuat;
+    public HangSanhSu(long maHang, String tenHang, int soLuongTon) throws NgoaiLeSoAm {
+        super(maHang, tenHang, soLuongTon);
     }
 
     public String getNhaSanXuat() {
@@ -40,7 +44,11 @@ public class HangSanhSu extends HangHoa {
     }
 
     public boolean coBanCham(){
-        return getSoLuongTon() > 50 && ngayNhapKho.plusDays(10).isAfter(LocalDate.now());
+        return vanDe();
     }
 
+    @Override
+    public String toString() {
+        return String.format("%-20s", "hàng sành sứ") + super.toString() + String.format("%-15s%-15s", "NSX: "+ nhaSanXuat, "NNK: "+ ngayNhapKho);
+    }
 }

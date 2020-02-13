@@ -20,4 +20,9 @@ public abstract class Bill implements IntoMoney {
     public LocalDate getDate() {
         return date;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%-10s%-15s", code, date);
+    }
 }

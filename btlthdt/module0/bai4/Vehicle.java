@@ -38,8 +38,6 @@ public class Vehicle {
         }
     }
 
-    public Vehicle(){}
-
     public String getType() {
         return type;
     }

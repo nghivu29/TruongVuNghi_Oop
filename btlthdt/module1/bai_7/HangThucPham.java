@@ -4,11 +4,15 @@ import java.time.LocalDate;
 
 public class HangThucPham extends HangHoa {
     private String nhaCungCap;
-    private LocalDate ngaySanXuat, ngayHetHan;
+    private LocalDate ngaySanXuat = LocalDate.now(), ngayHetHan = ngaySanXuat;
 
-    public HangThucPham(long maHang, String nhaCungCap) throws NgoaiLeSoAm {
-        super(maHang);
-        this.nhaCungCap = nhaCungCap;
+    public HangThucPham(long maHang, String tenHang, int soLuongTon) throws NgoaiLeSoAm {
+        super(maHang, tenHang, soLuongTon);
+    }
+
+    @Override
+    protected boolean vanDe() {
+        return getSoLuongTon() > 0 && ngayHetHan.isBefore(LocalDate.now());
     }
 
     public HangThucPham(long maHang) throws NgoaiLeSoAm {
@@ -45,6 +49,11 @@ public class HangThucPham extends HangHoa {
     }
 
     public boolean coKhoBan(){
-        return getSoLuongTon() > 0 && ngayHetHan.isBefore(LocalDate.now());
+        return vanDe();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-20s", "hàng thực phẩm") + super.toString() + String.format("%-15s%-20s%-15s", "NCC: "+ nhaCungCap, "NSX: "+ ngaySanXuat, "NHH: "+ ngayHetHan);
     }
 }

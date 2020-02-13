@@ -10,9 +10,11 @@ public class QLChuyenXe {
         list = new ArrayList<>();
     }
 
-    public void add(ChuyenXe chuyenXe){
-        list.add(chuyenXe);
+    public boolean add(ChuyenXe chuyenXe){
+        return list.add(chuyenXe);
     }
+
+    public boolean remove(String maSo){return false;}
 
     public double tinhTongDoanThu(){
         double tong = 0;
@@ -21,5 +23,9 @@ public class QLChuyenXe {
             tong += it.next().tinhDoanhThu();
         }
         return tong;
+    }
+
+    public List<ChuyenXe> getList() {
+        return list;
     }
 }
