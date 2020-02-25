@@ -1,6 +1,0 @@
-Viết lớp mô tả các toán tử trên danh sách liên kết sử dụng LinkedList. Chương trình tạo hai LinkedList chứa thông tin là
-các chuỗi String. Các phần tử của danh sách này được đưa vào danh sách kia. Các chuỗi trong danh sách được chuyển sang
-chữ hoa, xoá các phần tử.
-
-!! bài này bên cấu trúc dữ liệu và giải thuật
-!! khó quá không làm được
